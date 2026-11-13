@@ -1,0 +1,392 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rudra Digital Studio</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,sans-serif;background:#080e1b;color:#fff;line-height:1.6}
+header{position:sticky;top:0;z-index:10;background:#0d1829;padding:17px 6%;display:flex;justify-content:space-between;align-items:center;gap:15px;border-bottom:1px solid #293951}
+.logo{font-weight:900;font-size:21px;color:#45c9ff}
+nav{display:flex;gap:17px;flex-wrap:wrap}
+nav a{color:white;text-decoration:none;font-size:14px}
+nav a:hover{color:#45c9ff}
+.hero{text-align:center;padding:100px 20px;background:radial-gradient(ellipse at top,#17416a,#080e1b 70%)}
+.hero h1{font-size:clamp(38px,7vw,68px);line-height:1.15}
+.hero h1 span{color:#45c9ff}
+.hero p{max-width:650px;margin:20px auto;color:#b6c6d9}
+.btn{border:0;background:linear-gradient(100deg,#168ed0,#7963ed);color:white;padding:13px 22px;border-radius:8px;text-decoration:none;display:inline-block;font-weight:bold;cursor:pointer}
+.btn:hover{filter:brightness(1.15)}
+section{padding:70px 6%}
+.heading{text-align:center;font-size:34px;margin-bottom:10px}
+.heading span{color:#45c9ff}
+.sub{text-align:center;color:#aebdd0;max-width:650px;margin:0 auto 35px}
+.services,.pricing,.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
+.service{background:#14233a;border:1px solid #2b4563;border-radius:14px;padding:25px;cursor:pointer;transition:.2s}
+.service:hover{transform:translateY(-5px);border-color:#45c9ff}
+.service .emoji{font-size:38px}
+.service h3{color:#45c9ff;margin:10px 0}
+.service p{color:#b4c3d5;font-size:14px}
+.service b{display:block;margin-top:15px}
+.pricing-card{background:#14233a;border:1px solid #2b4563;padding:25px;border-radius:14px}
+.pricing-card h3{color:#45c9ff}
+.price{font-size:30px;font-weight:bold;margin:10px 0}
+.pricing-card p,.pricing-card li{color:#b4c3d5;font-size:14px}
+.pricing-card ul{padding-left:20px;margin:15px 0}
+.pricing-card button{margin-top:12px}
+#gallerySection{display:none;background:#0b1423}
+.gallery-top{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:25px;flex-wrap:wrap}
+.gallery-top h2{font-size:25px}
+.close{background:#293b55;color:white;border:0;border-radius:7px;padding:10px 15px;cursor:pointer}
+.gallery-card{background:#14233a;border:1px solid #2b4563;border-radius:12px;overflow:hidden;cursor:pointer;transition:.2s}
+.gallery-card:hover{transform:translateY(-4px);border-color:#45c9ff}
+.gallery-card img{width:100%;height:175px;object-fit:cover;display:block;background:#26364b}
+.gallery-info{padding:13px}
+.gallery-info h3{font-size:16px}
+.gallery-info p{color:#aebdd0;font-size:12px;margin:4px 0 9px}
+.choose{color:#69d5ff;font-size:13px;font-weight:bold}
+.order{background:#101d30}
+.formbox{max-width:720px;margin:auto;background:#14233a;border:1px solid #2b4563;border-radius:15px;padding:28px}
+label{display:block;margin:14px 0 6px;font-weight:bold}
+input,select,textarea{width:100%;padding:13px;background:#091321;border:1px solid #3a506b;border-radius:8px;color:white;outline:none}
+input:focus,select:focus,textarea:focus{border-color:#45c9ff}
+textarea{resize:vertical}
+form button{width:100%;margin-top:20px}
+#status{text-align:center;color:#7de4ad;margin-top:12px}
+.about{text-align:center;max-width:750px;margin:auto;color:#b4c3d5}
+footer{text-align:center;background:#050a12;padding:30px;color:#9eacc0;font-size:13px}
+@media(max-width:650px){
+ header{flex-direction:column}
+ nav{justify-content:center;gap:12px}
+ nav a{font-size:12px}
+ section{padding:50px 5%}
+ .formbox{padding:18px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">RUDRA DIGITAL STUDIO</div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <h1>Make Your Brand<br><span>Stand Out.</span></h1>
+  <p>Modern websites, professional YouTube thumbnails and attractive digital menus for businesses and creators.</p>
+  <a href="#services" class="btn">Explore Services</a>
+</section>
+
+<section id="services">
+  <h2 class="heading">Our <span>Services</span></h2>
+  <p class="sub">Choose a service and explore 12 visual design samples in each gallery.</p>
+
+  <div class="services">
+    <div class="service" onclick="openGallery('thumb')">
+      <div class="emoji">🎬</div>
+      <h3>YouTube Thumbnails</h3>
+      <p>Gaming, technology, food, education, travel and entertainment thumbnail concepts.</p>
+      <b>Starting ₹100</b>
+      <br><span class="choose">View 12 Samples →</span>
+    </div>
+
+    <div class="service" onclick="openGallery('web')">
+      <div class="emoji">💻</div>
+      <h3>Website Design</h3>
+      <p>Sweet shops, restaurants, clothing stores, portfolios and business website concepts.</p>
+      <b>Starting ₹1,000</b>
+      <br><span class="choose">View 12 Samples →</span>
+    </div>
+
+    <div class="service" onclick="openGallery('menu')">
+      <div class="emoji">🍔</div>
+      <h3>Digital Menus</h3>
+      <p>Restaurant, cafe, bakery, pizza, sweets and food menu design concepts.</p>
+      <b>Starting ₹200</b>
+      <br><span class="choose">View 12 Samples →</span>
+    </div>
+  </div>
+</section>
+
+<section id="gallerySection">
+  <div class="gallery-top">
+    <div>
+      <h2 id="galleryTitle">Sample Gallery</h2>
+      <p style="color:#aebdd0;font-size:13px">Click any design to select it for your enquiry.</p>
+    </div>
+    <button class="close" onclick="closeGallery()">✕ Close Gallery</button>
+  </div>
+  <div class="gallery" id="gallery"></div>
+</section>
+
+<section id="pricing">
+  <h2 class="heading">Our <span>Pricing</span></h2>
+  <p class="sub">Starting prices. Final quotation depends on the requirements and work involved.</p>
+
+  <div class="pricing">
+    <div class="pricing-card">
+      <h3>YouTube Thumbnail</h3>
+      <div class="price">₹100+</div>
+      <p>For video creators and channels.</p>
+      <ul>
+        <li>One custom thumbnail</li>
+        <li>PNG/JPG delivery</li>
+        <li>Revision as agreed</li>
+      </ul>
+      <button class="btn" onclick="selectService('YouTube Thumbnail')">Order Now</button>
+    </div>
+
+    <div class="pricing-card">
+      <h3>Website Design</h3>
+      <div class="price">₹1,000+</div>
+      <p>For businesses and personal projects.</p>
+      <ul>
+        <li>Basic website package</li>
+        <li>Mobile-friendly layout</li>
+        <li>Contact section</li>
+      </ul>
+      <button class="btn" onclick="selectService('Website Design')">Order Now</button>
+    </div>
+
+    <div class="pricing-card">
+      <h3>Digital Menu</h3>
+      <div class="price">₹200+</div>
+      <p>For cafes, restaurants and food shops.</p>
+      <ul>
+        <li>Custom menu design</li>
+        <li>Digital image/PDF</li>
+        <li>Revision as agreed</li>
+      </ul>
+      <button class="btn" onclick="selectService('Digital Menu')">Order Now</button>
+    </div>
+  </div>
+</section>
+
+<section class="order" id="contact">
+  <h2 class="heading">Start Your <span>Project</span></h2>
+  <p class="sub">Choose a design, tell us your requirements and send an enquiry.</p>
+
+  <div class="formbox">
+    <form id="contactForm" action="https://formspree.io/f/xjywgwzv" method="POST">
+
+      <label>Your Name *</label>
+      <input name="name" type="text" placeholder="Enter your name" required>
+
+      <label>Your Email *</label>
+      <input name="email" type="email" placeholder="Enter your email" required>
+
+      <label>Phone Number *</label>
+      <input name="phone" type="tel" placeholder="Enter your phone number" required>
+
+      <label>Choose Service *</label>
+      <select name="service" id="serviceSelect" required>
+        <option value="">Select service</option>
+        <option>YouTube Thumbnail</option>
+        <option>Website Design</option>
+        <option>Digital Menu</option>
+      </select>
+
+      <label>Selected Sample</label>
+      <input name="selected_sample" id="sampleSelect" placeholder="Choose a gallery sample" readonly>
+
+      <label>Budget</label>
+      <select name="budget">
+        <option value="">Choose your budget</option>
+        <option>Under ₹500</option>
+        <option>₹500 - ₹1,000</option>
+        <option>₹1,000 - ₹3,000</option>
+        <option>₹3,000+</option>
+        <option>Need a quotation</option>
+      </select>
+
+      <label>Project Details *</label>
+      <textarea name="message" rows="5" placeholder="Describe your project..." required></textarea>
+
+      <button class="btn" id="sendBtn" type="submit">Send Enquiry →</button>
+      <p id="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+<section>
+  <h2 class="heading">About <span>Us</span></h2>
+  <p class="about">
+    Rudra Digital Studio is a creative digital-services project offering
+    website design, YouTube thumbnails and digital menus. We focus on
+    modern visuals, clean layouts and clear communication.
+  </p>
+</section>
+
+<footer>
+  <strong>RUDRA DIGITAL STUDIO</strong>
+  <p>Creative Ideas. Digital Solutions.</p>
+  <p>© <span id="year"></span> Rudra Digital Studio.</p>
+  <p>All gallery images are visual references for sample concepts.</p>
+</footer>
+
+<script>
+document.getElementById("year").textContent=new Date().getFullYear();
+
+/* Image collections - remote Unsplash photos */
+const photos = {
+ thumb:[
+  ["Gaming Thumbnail","Gaming", "photo-1511512578047-dfb367046420"],
+  ["Tech Review","Technology","photo-1498050108023-c5249f4df085"],
+  ["Food Challenge","Food","photo-1565299624946-b28f40a0ae38"],
+  ["Travel Adventure","Travel","photo-1501785888041-af3ef285b470"],
+  ["Study Tips","Education","photo-1434030216411-0b793f4b4173"],
+  ["Fitness Motivation","Fitness","photo-1534438327276-14e5300c3a48"],
+  ["Luxury Lifestyle","Lifestyle","photo-1515886657613-9f3515b0c78f"],
+  ["Business Growth","Business","photo-1460925895917-afdab827c52f"],
+  ["Photography","Photography","photo-1452587925148-ce544e77e70d"],
+  ["Music Vibes","Music","photo-1516280440614-37939bbacd81"],
+  ["Nature Story","Nature","photo-1470770841072-f978cf4d019e"],
+  ["Movie Review","Entertainment","photo-1489599849927-2ee91cede3ba"]
+ ],
+ web:[
+  ["Sweet Shop Website","Food Business","photo-1578985545062-69928b1d9587"],
+  ["Restaurant Website","Restaurant","photo-1517248135467-4c7edcad34c4"],
+  ["Clothing Store Website","Fashion Store","photo-1441986300917-64674bd600d8"],
+  ["Electronics Shop Website","Electronics","photo-1498049794561-7780e7231661"],
+  ["Gaming Website","Gaming","photo-1542751371-adc38448a05e"],
+  ["Travel Agency Website","Travel","photo-1464822759023-fed622ff2c3b"],
+  ["Photography Portfolio","Portfolio","photo-1452587925148-ce544e77e70d"],
+  ["Coffee Shop Website","Cafe","photo-1442512595331-e89e73853f31"],
+  ["Bakery Website","Bakery","photo-1509440159596-0249088772ff"],
+  ["Fitness Website","Fitness","photo-1534438327276-14e5300c3a48"],
+  ["Interior Design Website","Interior","photo-1600210492486-724fe5c67fb0"],
+  ["Business Agency Website","Agency","photo-1497366754035-f200968a6e72"]
+ ],
+ menu:[
+  ["Cafe Menu","Cafe","photo-1509042239860-f550ce710b93"],
+  ["Pizza Menu","Pizza","photo-1579751626657-72bc17010498"],
+  ["Burger Menu","Burger","photo-1568901346375-23c9450c58cd"],
+  ["Indian Food Menu","Indian Food","photo-1546833999-b9f581a1996d"],
+  ["Sweets Menu","Sweets","photo-1551024506-0cb7f3a0a2d9"],
+  ["Bakery Menu","Bakery","photo-1509440159596-0249088772ff"],
+  ["Juice Menu","Juice","photo- juice-placeholder"],
+  ["Dessert Menu","Dessert","photo-1488477181946-6428a0291777"],
+  ["Chinese Menu","Chinese","photo-1563245372-f21724e3856d"],
+  ["Healthy Food Menu","Healthy","photo-1512621776951-a57141f2eefd"],
+  ["Ice Cream Menu","Ice Cream","photo-1563805042-7684c019e1cb"],
+  ["Street Food Menu","Street Food","photo-1565299624946-b28f40a0ae38"]
+ ]
+};
+
+function imageURL(id){
+ if(id==="photo- juice-placeholder") {
+   return "https://images.unsplash.com/photo-1546173159-315724a31696?w=800&q=85";
+ }
+ return "https://images.unsplash.com/"+id+"?auto=format&fit=crop&w=800&q=85";
+}
+
+const serviceNames={
+ thumb:"YouTube Thumbnail",
+ web:"Website Design",
+ menu:"Digital Menu"
+};
+
+function openGallery(type){
+ const section=document.getElementById("gallerySection");
+ const gallery=document.getElementById("gallery");
+ document.getElementById("galleryTitle").textContent=
+   type==="thumb"?"YouTube Thumbnail Samples":
+   type==="web"?"Website Design Samples":"Digital Menu Samples";
+
+ gallery.innerHTML="";
+
+ photos[type].forEach((item,index)=>{
+   const card=document.createElement("article");
+   card.className="gallery-card";
+
+   const img=document.createElement("img");
+   img.src=imageURL(item[2]);
+   img.alt=item[0]+" visual sample";
+   img.loading="lazy";
+   img.onerror=()=>{img.style.display="none";};
+
+   const info=document.createElement("div");
+   info.className="gallery-info";
+
+   const title=document.createElement("h3");
+   title.textContent=(index+1)+". "+item[0];
+
+   const category=document.createElement("p");
+   category.textContent=item[1]+" • Sample concept";
+
+   const choose=document.createElement("span");
+   choose.className="choose";
+   choose.textContent="Select this sample →";
+
+   info.append(title,category,choose);
+   card.append(img,info);
+
+   card.addEventListener("click",()=>{
+     document.getElementById("serviceSelect").value=serviceNames[type];
+     document.getElementById("sampleSelect").value=item[0];
+     section.style.display="none";
+     document.getElementById("contact").scrollIntoView({behavior:"smooth"});
+   });
+
+   gallery.append(card);
+ });
+
+ section.style.display="block";
+ section.scrollIntoView({behavior:"smooth"});
+}
+
+function closeGallery(){
+ document.getElementById("gallerySection").style.display="none";
+}
+
+function selectService(name){
+ document.getElementById("serviceSelect").value=name;
+ document.getElementById("sampleSelect").value="";
+ document.getElementById("contact").scrollIntoView({behavior:"smooth"});
+}
+
+/* Formspree */
+const form=document.getElementById("contactForm");
+const button=document.getElementById("sendBtn");
+const status=document.getElementById("status");
+
+form.addEventListener("submit",async function(e){
+ e.preventDefault();
+ button.disabled=true;
+ button.textContent="Sending...";
+ status.textContent="";
+
+ try{
+  const response=await fetch(form.action,{
+   method:"POST",
+   body:new FormData(form),
+   headers:{"Accept":"application/json"}
+  });
+
+  if(response.ok){
+   status.textContent="✓ Your enquiry has been sent successfully!";
+   form.reset();
+  }else{
+   status.textContent="Unable to send. Please try again.";
+  }
+ }catch(error){
+  status.textContent="Connection error. Please check your internet.";
+ }
+
+ button.disabled=false;
+ button.textContent="Send Enquiry →";
+});
+</script>
+
+</body>
+</html>
